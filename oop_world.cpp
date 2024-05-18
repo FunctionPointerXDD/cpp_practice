@@ -1,32 +1,7 @@
 
 #include <iostream>
 
-/*
-struct userdata
-{
-	int age;
-	char szname[32];
-
-	void print(userdata *p_user)
-	{
-		int data = 5;
-
-		printf("%d, %s\n", p_user->age, p_user->szname);
-	}
-
-	void print2()
-	{
-		int data = 5;
-
-		//식별자 검사 문제가 될 수 있음
-		printf("%d, %s\n", age, szname);
-
-		//this pointer
-		printf("%d, %s\n", this->age, this->szname);
-	}
-};
-*/
-
+//class --> like struct + funciotn + alpha(control access && Inheritance
 //struct --> class
 class userdata
 {
@@ -56,3 +31,28 @@ int	main(void)
 	return 0;
 }
 
+/*
+struct userdata
+{
+	int age;
+	char szname[32];
+
+	void print(userdata *p_user)
+	{
+		int data = 5;
+
+		printf("%d, %s\n", p_user->age, p_user->szname);
+	}
+
+	void print2()
+	{
+		int data = 5;
+
+		//식별자 검사 문제가 될 수 있음
+		printf("%d, %s\n", age, szname);
+
+		//this pointer
+		printf("%d, %s\n", this->age, this->szname);
+	}
+};
+*/
