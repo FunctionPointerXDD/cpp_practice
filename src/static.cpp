@@ -25,7 +25,7 @@ public:
 	}
 
 private:
-	int	m_nData;
+	int			m_nData;
 	static int	m_nCount;
 };
 
@@ -35,7 +35,8 @@ int	CTest::m_nCount = 0;
 
 int	main(void)
 {
-	CTest	a(5), b(10), c(11);
+	CTest	a(5), b(10), c(11); // --> 3개 인스턴스가 선언되었으므로
+								// GetCount()는 3번 호출된다.
 
 	std::cout << a.GetCount() << std::endl;
 	b.ResetCount();
@@ -43,3 +44,4 @@ int	main(void)
 	std::cout << CTest::GetCount() << std::endl;
 	return 0;
 }
+

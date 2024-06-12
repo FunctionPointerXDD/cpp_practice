@@ -25,6 +25,12 @@ public:
 		//this->m_pnData = new int;
 		//*m_pnData = *rhs.m_pnData;
 	}
+	
+	CMyData(int nParam) // --> 변환 생성자! 
+	{
+		std::cout << "CTest(int)" << std::endl;
+		m_pnData = new int(nParam);
+	}
 
 	~CMyData()
 	{
@@ -35,7 +41,7 @@ public:
 	{
 		*m_pnData = param;
 	}
-	int		GetData(void)
+	int		GetData(void) const 
 	{
 		//확인 결과 m_pnData 의 주소는 a, b가 다른 주소의 각각 할당된다.
 		//std::cout << &m_pnData << std::endl;
@@ -58,10 +64,19 @@ private:
 	int	*m_pnData;
 };
 
+void	TestFunc(const CMyData &param)
+{
+	std::cout << param.GetData() << std::endl;
+}
+
 int	main(void)
 {
+	//int a(5);
+	//int b(a);
+	//int (5);
 	//CMyData a(10);
 	//CMyData b(a);
+	//CMydata (5);
 
 	CMyData a;
 	CMyData b;
@@ -73,5 +88,8 @@ int	main(void)
 	std::cout << a.GetData() << std::endl;
 	std::cout << b.GetData() << std::endl;
 	
+	TestFunc(5); // --> TestFunc( CMyData(5) ); --> 이런 식으로 컴파일러가
+				 // 자동으로 변환해버림!!
+				 // 나도 모르게 객체가 임시로 생성되었다가 사라짐
 	return 0;
 }

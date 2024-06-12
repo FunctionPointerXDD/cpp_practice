@@ -6,18 +6,17 @@ using namespace std;
 
 class c_test
 {
-	public:
+public:
+	c_test() // constructor
+	{
+		m_data = 10;
+	}
 
-		c_test()
-		{
-			m_data = 10;
-		}
-
-		//int m_data;
-		void printdata(void)
-		{
-			cout << m_data << endl;
-		}
+	//int m_data;
+	void printdata(void)
+	{
+		cout << m_data << endl;
+	}
 };
 
 int	main(void)

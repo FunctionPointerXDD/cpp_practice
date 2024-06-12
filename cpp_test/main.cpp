@@ -10,18 +10,15 @@ void	TestFunc(const CMyString &param)
 
 int	main(void)
 {
-	CMyString	strData, strTest;
+	CMyString strLeft("Hello"), strRight("World"), strResult;
 
-	strData.SetString("Hello");
-	strTest.SetString("World");
+	strResult = strLeft + strRight;
+	std::cout << strResult << std::endl;
 
-	//복사 생성
-	CMyString strNewData(strData);
-	std::cout << strNewData.GetString() << std::endl;
-
-	//단순 대입 연산자 호출
-	strNewData = strTest;
-	std::cout << strNewData.GetString() << std::endl;
+	std::cout << strLeft << std::endl;
+	strLeft += CMyString("World");
+	std::cout << strLeft << std::endl;
 
 	return 0;
 }
+
