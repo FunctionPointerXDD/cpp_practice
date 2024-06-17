@@ -23,9 +23,9 @@ void	testfunc(void)
  
 int	main(void)
 {
-	TEST::testfunc(); //암묵적 전역 소속	
+	testfunc(); //암묵적(묵시적) 전역 소속	
 	::testfunc(); //명시적으로 전역 소속을 ::로 서술 	
-	testfunc();
+	TEST::testfunc(); // TEST  소속
 	std::cout << TEST::g_ndata << std::endl;
 	return 0;
 }
