@@ -21,6 +21,8 @@ private:
 /** CMyData -> CMyDataEx */
 class CMyDataEx : public CMyData
 {
+	//파생 클래스에서는 변수 초기화를 하지 말자!!
+	//부모 클래스에서 변수 초기화 되어있는 것을 그대로 사용
 	public:
 		CMyDataEx() { std::cout << "CMyDataEx()" << std::endl; }
 		void	TestFunc()

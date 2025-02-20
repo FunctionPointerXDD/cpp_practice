@@ -10,7 +10,7 @@ int	main(void)
 
 	//pNum 과 rNum 는 포인터이며, 둘 다 const int 형식을 가진다. 
 	//즉, *pNum , *rNum 은 고정됨으로 변경할 수 없다. 그러나, 포인터 pNum,
-	//rNum 은 변경할 수 없다.
+	//rNum 은 변경할 수 있다.
 	const int *pNum = &num1;
 
 	int	const *rNum = &num2;
@@ -18,6 +18,9 @@ int	main(void)
 	//xNum 은 상수 포인터이다. --> *xNum 의 값을 변경할 수 있으나, xNum 포인터
 	//자체의 값을 변경할 수 없다.
 	int * const xNum = &num3;
+
+	//zNum 포인터와 그 포인터가 가리키는 num3 모두 변경할 수 없다.
+	const int * const zNum = &num3;
 
 	printf("pNum : %d, rNum : %d\n", *pNum, *rNum);
 //	*rNum = 10;
